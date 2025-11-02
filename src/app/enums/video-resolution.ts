@@ -1,0 +1,6 @@
+export enum VideoResolution {
+    PORTAIT_720P = '720x1280',
+    LANDSCAPE_720P = '1280x720',
+    PORTAIT_1080P = '1024x1792',
+    LANDSCAPE_1080P = '1792x1024'
+}
