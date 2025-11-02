@@ -1,0 +1,26 @@
+name: Test build
+
+on:
+  push:
+    branches: [ master, develop ]
+  pull_request:
+    branches: [ master, develop ]
+
+jobs:
+  test-build-front:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: Setup nodejs 18
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22.x
+
+      - name: Install depedencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
